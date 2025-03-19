@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello javascript</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js"></script>
+</head>
+<body>
+    <h1>Ejercicios S2</h1>
+    <h2>Ejercicio 1</h2>
+    <p>Crea un formulario en el que el usuario pueda elegir entre tres opciones:
+        <ul>
+            <li>Obtener la fecha actual en milisegundos.</li>
+            <li>
+                Obtener la fecha actual en formato dd-MM-yyyy.
+            </li>
+            <li>
+                Obtener la hora actual en formato hh:mm:ss.
+            </li>
+        </ul>
+    
+    Cuando el usuario haga clic en un botón, se debe mostrar el resultado correspondiente en la página sin recargarla.
+    
+        [!INFO] Usa el objeto Date para gestionar la fecha.
+    </p>
+    <form id="ejercicio1" action="">
+        <input type="radio" name="option" value="1">Obtener la fecha actual en milisegundos.<br>
+        <input type="radio" name="option" value="2">Obtener la fecha actual en formato dd-MM-yyyy.<br>
+        <input type="radio" name="option" value="3">Obtener la hora actual en formato hh:mm:ss.<br>
+        <button type="submit">Mostrar</button>
+    </form>
+    <div id="resultado"></div>
+
+    <h2>Ejercicio 2</h2>
+    <p>Crea un formulario donde el usuario pueda ingresar un número del 1 al 99 y, al hacer clic en un botón, se muestre en la página la tabla de multiplicar de ese número.</p>
+    <form id="ejercicio2" action="">
+        <input id="numeroEj2" type="number" name="numero" min="1" max="99">
+        <button type="submit">Mostrar</button>
+    </form>
+
+    <h2>Ejercicio 3</h2>
+    <p>Crea un formulario donde el usuario pueda ingresar un número y, al hacer clic en un botón, se muestre en la página el factorial de ese número.</p>
+    <form id="ejercicio3" action="">
+        <input id="numeroEj3" type="number" name="numero" min="1">
+        <button type="submit">Mostrar</button>
+    </form>
+</body>
+</html>
