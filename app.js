@@ -102,6 +102,55 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         resultadoContainer.innerHTML += `<p>${n}! = ${factorial}</p>`;
     });
+    //Ejercicio 4
+    /**
+     * Crea un formulario donde el usuario pueda:
+     * 1. Elegir una operación matemática (suma, resta, multiplicación, división).
+     * 2. Ingresar dos números.
+     * 3. Presionar un botón para realizar la operación y mostrar el resultado en la página.
+     * Si el usuario intenta dividir por 0, debe mostrarse un mensaje de error en pantalla indicando que la operación no es válida (pantalla != consola).
+     */
+    const formularioEjercicio4 = document.getElementById("ejercicio4");
+    formularioEjercicio4.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent form submission
+        const operacion = document.querySelector('input[name="operacion"]:checked').value;
+        const num1 = parseFloat(document.getElementById("numero1").value);
+        const num2 = parseFloat(document.getElementById("numero2").value);
+        let resultadoContainer = document.getElementById("resultadoEj4Container");
+        if (!resultadoContainer) {
+            resultadoContainer = document.createElement("div");
+            resultadoContainer.id = "resultadoEj4Container";
+            document.body.appendChild(resultadoContainer);
+        }
+        resultadoContainer.innerHTML = "";
+        if (!operacion) {
+            resultado.innerHTML = "Por favor, selecciona una opción.";
+            return;
+        }
+        let resultado = 0;
+        switch (operacion.value) {
+            case "suma":
+                resultado = num1 + num2;
+                break;
+            case "resta":
+                resultado = num1 - num2;
+                break;
+            case "multiplicacion":
+                resultado = num1 * num2;
+                break;
+            case "division":
+                if (num2 === 0) {
+                    resultado = "No se puede dividir por 0.";
+                } else {
+                    resultado = num1 / num2;
+                }
+                break;
+            default:
+                resultado = "Operación no válida.";
+                break;
+            }
+            resultadoContainer.innerHTML = `<h3>Resultado:</h3><p>${resultado}</p>`;
+    });
 
     
 });
